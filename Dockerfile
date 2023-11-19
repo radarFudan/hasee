@@ -44,6 +44,13 @@ RUN pip install git+https://github.com/Lightning-AI/lightning@800b87eb464bda8def
 RUN pip uninstall -y transformer_engine
 RUN pip install lightning[app]
 
+RUN pip3 install jax==0.4.13
+RUN pip3 install -U "jaxlib==0.4.13+cuda12.cudnn89" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+
+RUN pip3 install pipreqs
+RUN pip3 install omegaconf
+
+
 # Install dependencies
 COPY apt_install.txt .
 RUN apt-get update
