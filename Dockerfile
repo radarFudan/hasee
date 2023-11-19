@@ -45,7 +45,8 @@ RUN pip uninstall -y transformer_engine
 RUN pip install lightning[app]
 
 RUN pip3 install jax==0.4.13
-RUN pip3 install -U "jaxlib==0.4.13+cuda12.cudnn89" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+# RUN pip3 install -U "jaxlib==0.4.13+cuda12.cudnn89" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+RUN pip3 install -U "jaxlib==0.4.13+cuda11.cudnn86" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
 
 RUN pip3 install pipreqs
 RUN pip3 install omegaconf
